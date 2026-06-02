@@ -1,0 +1,46 @@
+return {
+  'stevearc/aerial.nvim',
+  dependencies = {
+    'nvim-treesitter/nvim-treesitter',
+    'nvim-tree/nvim-web-devicons',
+  },
+  opts = {
+    backends = { 'treesitter', 'lsp', 'markdown', 'asciidoc', 'man' },
+    layout = {
+      max_width = { 40, 0.2 },
+      width = nil,
+      min_width = 20,
+      win_opts = {},
+      default_direction = 'prefer_right',
+      placement = 'window',
+      resize_to_content = true,
+      preserve_equality = false,
+    },
+    show_guides = true,
+    guides = {
+      mid_item = '├─',
+      last_item = '└─',
+      nested_top = '│ ',
+      whitespace = '  ',
+    },
+    filter_kind = {
+      'Class',
+      'Constructor',
+      'Enum',
+      'Function',
+      'Interface',
+      'Module',
+      'Method',
+      'Struct',
+    },
+    highlight_on_hover = true,
+    autojump = false,
+    close_on_select = false,
+    manage_folds = false,
+  },
+  keys = {
+    { '<leader>a', '<cmd>AerialToggle!<cr>', desc = '[A]erial toggle outline' },
+    { '{', '<cmd>AerialPrev<cr>',            desc = 'Aerial prev symbol' },
+    { '}', '<cmd>AerialNext<cr>',            desc = 'Aerial next symbol' },
+  },
+}
