@@ -1,4 +1,4 @@
-# Dot files
+# Dotfiles
 Configuration for niri + noctalia shell + kitty + nvim.
 
 - OS: Arch Linux
@@ -11,3 +11,5 @@ Configuration for niri + noctalia shell + kitty + nvim.
 - Terminal Font: JetBrainsMonoNF-Regular (11pt)
 - CPU: AMD Ryzen 5 3600 (12) @ 4.21 GHz
 - GPU: NVIDIA GeForce GTX 1660 SUPER
+
+<img width="1920" height="1080" alt="screenshot" src="https://github.com/user-attachments/assets/cf6ccb61-bc7d-4411-9db9-bf9ac3316821" />
