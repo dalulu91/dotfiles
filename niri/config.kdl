@@ -389,6 +389,12 @@ window-rule {
     open-on-workspace "reaper-vst-containers"
 }
 
+// PureRef in glass mode is fully transparent - draw focus ring around the window, not behind it
+window-rule {
+    match app-id="^PureRef$"
+    draw-border-with-background false
+}
+
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
