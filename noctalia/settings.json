@@ -674,7 +674,7 @@
         "disableWallpaper": true
     },
     "notifications": {
-        "backgroundOpacity": 1,
+        "backgroundOpacity": 0.25,
         "clearDismissed": true,
         "criticalUrgencyDuration": 15,
         "density": "default",
