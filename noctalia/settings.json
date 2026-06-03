@@ -6,7 +6,7 @@
         "clipboardWrapText": true,
         "customLaunchPrefix": "",
         "customLaunchPrefixEnabled": false,
-        "density": "default",
+        "density": "compact",
         "enableClipPreview": true,
         "enableClipboardChips": true,
         "enableClipboardHistory": false,
@@ -14,19 +14,18 @@
         "enableSessionSearch": true,
         "enableSettingsSearch": true,
         "enableWindowsSearch": true,
-        "iconMode": "tabler",
+        "iconMode": "native",
         "ignoreMouseInput": false,
         "overviewLayer": false,
         "pinnedApps": [
-            "helium"
         ],
-        "position": "center",
+        "position": "follow_bar",
         "screenshotAnnotationTool": "",
         "showCategories": true,
         "showIconBackground": false,
         "sortByMostUsed": true,
-        "terminalCommand": "alacritty -e",
-        "viewMode": "list"
+        "terminalCommand": "kitty -e",
+        "viewMode": "grid"
     },
     "audio": {
         "mprisBlacklist": [
@@ -43,28 +42,28 @@
     "bar": {
         "autoHideDelay": 500,
         "autoShowDelay": 150,
-        "backgroundOpacity": 0,
-        "barType": "simple",
+        "backgroundOpacity": 1,
+        "barType": "floating",
         "capsuleColorKey": "none",
         "capsuleOpacity": 1,
-        "contentPadding": 0,
+        "contentPadding": 5,
         "density": "comfortable",
         "displayMode": "always_visible",
         "enableExclusionZoneInset": true,
-        "fontScale": 1.04,
+        "fontScale": 1,
         "frameRadius": 12,
         "frameThickness": 8,
         "hideOnOverview": false,
         "marginHorizontal": 4,
         "marginVertical": 4,
-        "middleClickAction": "none",
+        "middleClickAction": "launcherPanel",
         "middleClickCommand": "",
         "middleClickFollowMouse": false,
         "monitors": [
             "DP-1",
             "HDMI-A-1"
         ],
-        "mouseWheelAction": "none",
+        "mouseWheelAction": "workspace",
         "mouseWheelWrap": true,
         "outerCorners": true,
         "position": "top",
@@ -74,60 +73,57 @@
         "rightClickFollowMouse": true,
         "screenOverrides": [
             {
-                "density": "mini",
+                "density": "default",
                 "displayMode": "always_visible",
                 "enabled": true,
                 "name": "HDMI-A-1",
-                "position": "bottom",
+                "position": "top",
                 "widgets": {
                     "center": [
-                        {
-                            "characterCount": 2,
-                            "colorizeIcons": false,
-                            "emptyColor": "secondary",
-                            "enableScrollWheel": true,
-                            "focusedColor": "primary",
-                            "followFocusedScreen": false,
-                            "fontWeight": "bold",
-                            "groupedBorderOpacity": 1,
-                            "hideUnoccupied": false,
-                            "iconScale": 0.8,
-                            "id": "Workspace",
-                            "labelMode": "index",
-                            "occupiedColor": "secondary",
-                            "pillSize": 0.6,
-                            "showApplications": false,
-                            "showApplicationsHover": false,
-                            "showBadge": true,
-                            "showLabelsOnlyWhenOccupied": true,
-                            "unfocusedIconsOpacity": 1
-                        }
                     ],
                     "left": [
                         {
                             "colorizeIcons": false,
-                            "hideMode": "visible",
-                            "id": "ActiveWindow",
-                            "maxWidth": 145,
-                            "scrollingMode": "hover",
-                            "showIcon": true,
-                            "showText": true,
-                            "textColor": "none",
-                            "useFixedWidth": false
+                            "hideMode": "hidden",
+                            "iconScale": 0.76,
+                            "id": "Taskbar",
+                            "maxTaskbarWidth": 40,
+                            "onlyActiveWorkspaces": true,
+                            "onlySameOutput": true,
+                            "showPinnedApps": false,
+                            "showTitle": true,
+                            "smartWidth": true,
+                            "titleWidth": 120
+                        },
+                        {
+                            "colorizeSystemIcon": "none",
+                            "colorizeSystemText": "none",
+                            "customIconPath": "",
+                            "enableColorization": false,
+                            "icon": "rocket",
+                            "iconColor": "none",
+                            "id": "Launcher",
+                            "useDistroLogo": false
                         }
                     ],
                     "right": [
                         {
-                            "deviceNativePath": "__default__",
+                            "displayMode": "alwaysShow",
+                            "iconColor": "none",
+                            "id": "Network",
+                            "textColor": "none"
+                        },
+                        {
+                            "deviceNativePath": "hidpp_battery_0",
                             "displayMode": "graphic-clean",
-                            "hideIfIdle": false,
+                            "hideIfIdle": true,
                             "hideIfNotDetected": true,
                             "id": "Battery",
                             "showNoctaliaPerformance": false,
                             "showPowerProfiles": false
                         },
                         {
-                            "displayMode": "onhover",
+                            "displayMode": "alwaysShow",
                             "iconColor": "none",
                             "id": "Volume",
                             "middleClickCommand": "pwvucontrol || pavucontrol",
@@ -168,64 +164,47 @@
                 "widgets": {
                     "center": [
                         {
-                            "characterCount": 2,
-                            "colorizeIcons": false,
-                            "emptyColor": "secondary",
-                            "enableScrollWheel": true,
-                            "focusedColor": "primary",
-                            "followFocusedScreen": false,
-                            "fontWeight": "bold",
-                            "groupedBorderOpacity": 0.38,
-                            "hideUnoccupied": false,
-                            "iconScale": 0.79,
-                            "id": "Workspace",
-                            "labelMode": "index",
-                            "occupiedColor": "secondary",
-                            "pillSize": 0.6,
-                            "showApplications": false,
-                            "showApplicationsHover": false,
-                            "showBadge": true,
-                            "showLabelsOnlyWhenOccupied": true,
-                            "unfocusedIconsOpacity": 1
-                        }
-                    ],
-                    "left": [
-                        {
-                            "displayMode": "onhover",
-                            "iconColor": "secondary",
-                            "id": "Network",
-                            "textColor": "secondary"
-                        },
-                        {
-                            "colorizeIcons": false,
-                            "hideMode": "hidden",
-                            "id": "ActiveWindow",
-                            "maxWidth": 145,
-                            "scrollingMode": "hover",
-                            "showIcon": true,
-                            "showText": true,
-                            "textColor": "none",
-                            "useFixedWidth": false
-                        }
-                    ],
-                    "right": [
-                        {
                             "clockColor": "none",
-                            "customFont": "JetBrainsMono Nerd Font",
-                            "formatHorizontal": "dd/MM",
-                            "formatVertical": "HH mm - dd MM",
-                            "id": "Clock",
-                            "tooltipFormat": "HH:mm ddd, MMM dd",
-                            "useCustomFont": true
-                        },
-                        {
-                            "clockColor": "error",
                             "customFont": "JetBrainsMono Nerd Font",
                             "formatHorizontal": "HH:mm",
                             "formatVertical": "HH mm - dd MM",
                             "id": "Clock",
                             "tooltipFormat": "HH:mm ddd, MMM dd",
                             "useCustomFont": true
+                        }
+                    ],
+                    "left": [
+                        {
+                            "colorizeSystemIcon": "none",
+                            "colorizeSystemText": "none",
+                            "customIconPath": "",
+                            "enableColorization": false,
+                            "icon": "rocket",
+                            "iconColor": "none",
+                            "id": "Launcher",
+                            "useDistroLogo": false
+                        },
+                        {
+                            "colorizeIcons": false,
+                            "hideMode": "hidden",
+                            "iconScale": 0.8,
+                            "id": "Taskbar",
+                            "maxTaskbarWidth": 25,
+                            "onlyActiveWorkspaces": false,
+                            "onlySameOutput": true,
+                            "showPinnedApps": true,
+                            "showTitle": true,
+                            "smartWidth": true,
+                            "titleWidth": 120
+                        }
+                    ],
+                    "right": [
+                        {
+                            "displayMode": "alwaysHide",
+                            "iconColor": "none",
+                            "id": "Volume",
+                            "middleClickCommand": "pwvucontrol || pavucontrol",
+                            "textColor": "none"
                         },
                         {
                             "applyToAllMonitors": true,
@@ -235,19 +214,18 @@
                             "textColor": "none"
                         },
                         {
-                            "displayMode": "onhover",
-                            "iconColor": "none",
-                            "id": "Volume",
-                            "middleClickCommand": "pwvucontrol || pavucontrol",
-                            "textColor": "none"
-                        },
-                        {
                             "hideWhenZero": false,
                             "hideWhenZeroUnread": false,
                             "iconColor": "none",
                             "id": "NotificationHistory",
-                            "showUnreadBadge": true,
+                            "showUnreadBadge": false,
                             "unreadBadgeColor": "primary"
+                        },
+                        {
+                            "displayMode": "onhover",
+                            "iconColor": "secondary",
+                            "id": "Network",
+                            "textColor": "secondary"
                         }
                     ]
                 }
@@ -257,7 +235,7 @@
         "showOnWorkspaceSwitch": true,
         "showOutline": false,
         "useSeparateOpacity": true,
-        "widgetSpacing": 5,
+        "widgetSpacing": 0,
         "widgets": {
             "center": [
                 {
@@ -503,16 +481,52 @@
         }
     },
     "desktopWidgets": {
-        "enabled": false,
+        "enabled": true,
         "gridSnap": false,
         "gridSnapScale": false,
         "monitorWidgets": [
+            {
+                "name": "HDMI-A-1",
+                "widgets": [
+                    {
+                        "clockColor": "none",
+                        "clockStyle": "digital",
+                        "customFont": "",
+                        "format": "HH:mm\\nd MMMM yyyy",
+                        "id": "Clock",
+                        "roundedCorners": true,
+                        "showBackground": false,
+                        "useCustomFont": false,
+                        "x": 582,
+                        "y": 1095
+                    },
+                    {
+                        "hideMode": "visible",
+                        "id": "MediaPlayer",
+                        "roundedCorners": true,
+                        "showAlbumArt": true,
+                        "showBackground": true,
+                        "showButtons": true,
+                        "showVisualizer": true,
+                        "visualizerType": "linear",
+                        "x": 619,
+                        "y": 1268
+                    },
+                    {
+                        "id": "Weather",
+                        "roundedCorners": true,
+                        "showBackground": true,
+                        "x": 624,
+                        "y": 1389
+                    }
+                ]
+            }
         ],
         "overviewEnabled": true
     },
     "dock": {
         "animationSpeed": 1,
-        "backgroundOpacity": 0,
+        "backgroundOpacity": 1,
         "colorizeIcons": true,
         "deadOpacity": 0.58,
         "displayMode": "always_visible",
@@ -547,7 +561,7 @@
         "allowPanelsOnScreenWithoutBar": true,
         "allowPasswordWithFprintd": false,
         "animationDisabled": false,
-        "animationSpeed": 1,
+        "animationSpeed": 2,
         "autoStartAuth": false,
         "avatarImage": "/home/daniel/.face",
         "boxRadiusRatio": 1,
@@ -555,12 +569,12 @@
         "clockStyle": "custom",
         "compactLockScreen": false,
         "dimmerOpacity": 0.11,
-        "enableBlurBehind": true,
+        "enableBlurBehind": false,
         "enableLockScreenCountdown": true,
         "enableLockScreenMediaControls": false,
         "enableShadows": true,
         "forceBlackScreenCorners": false,
-        "iRadiusRatio": 1,
+        "iRadiusRatio": 2,
         "keybinds": {
             "keyDown": [
                 "Down"
@@ -594,7 +608,7 @@
         ],
         "lockScreenTint": 0,
         "passwordChars": false,
-        "radiusRatio": 1,
+        "radiusRatio": 0,
         "reverseScroll": false,
         "scaleRatio": 1,
         "screenRadiusRatio": 1,
@@ -674,7 +688,7 @@
         "disableWallpaper": true
     },
     "notifications": {
-        "backgroundOpacity": 0.25,
+        "backgroundOpacity": 1,
         "clearDismissed": true,
         "criticalUrgencyDuration": 15,
         "density": "default",
@@ -804,13 +818,13 @@
         "fontDefaultScale": 1,
         "fontFixed": "monospace",
         "fontFixedScale": 1,
-        "panelBackgroundOpacity": 0.15,
+        "panelBackgroundOpacity": 1,
         "panelsAttachedToBar": true,
         "scrollbarAlwaysVisible": true,
         "settingsPanelMode": "attached",
         "settingsPanelSideBarCardStyle": false,
         "tooltipsEnabled": true,
-        "translucentWidgets": true
+        "translucentWidgets": false
     },
     "wallpaper": {
         "automationEnabled": false,
