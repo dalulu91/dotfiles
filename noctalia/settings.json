@@ -187,15 +187,15 @@
                         {
                             "colorizeIcons": false,
                             "hideMode": "hidden",
-                            "iconScale": 0.8,
+                            "iconScale": 0.7,
                             "id": "Taskbar",
-                            "maxTaskbarWidth": 25,
+                            "maxTaskbarWidth": 40,
                             "onlyActiveWorkspaces": false,
                             "onlySameOutput": true,
                             "showPinnedApps": true,
                             "showTitle": true,
                             "smartWidth": true,
-                            "titleWidth": 120
+                            "titleWidth": 150
                         }
                     ],
                     "right": [
@@ -563,7 +563,7 @@
         "animationDisabled": false,
         "animationSpeed": 2,
         "autoStartAuth": false,
-        "avatarImage": "/home/daniel/.face",
+        "avatarImage": "/home/daniel/Pictures/22009542.jpeg",
         "boxRadiusRatio": 1,
         "clockFormat": "hh\\nmm",
         "clockStyle": "custom",
