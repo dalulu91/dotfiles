@@ -482,7 +482,7 @@
     },
     "desktopWidgets": {
         "enabled": true,
-        "gridSnap": false,
+        "gridSnap": true,
         "gridSnapScale": false,
         "monitorWidgets": [
             {
@@ -497,8 +497,8 @@
                         "roundedCorners": true,
                         "showBackground": false,
                         "useCustomFont": false,
-                        "x": 582,
-                        "y": 1095
+                        "x": 500,
+                        "y": 1240
                     },
                     {
                         "hideMode": "visible",
@@ -509,15 +509,15 @@
                         "showButtons": true,
                         "showVisualizer": true,
                         "visualizerType": "linear",
-                        "x": 619,
-                        "y": 1268
+                        "x": 380,
+                        "y": 1480
                     },
                     {
                         "id": "Weather",
                         "roundedCorners": true,
                         "showBackground": true,
-                        "x": 624,
-                        "y": 1389
+                        "x": 380,
+                        "y": 1600
                     }
                 ]
             }
