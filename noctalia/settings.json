@@ -19,7 +19,7 @@
         "overviewLayer": false,
         "pinnedApps": [
         ],
-        "position": "follow_bar",
+        "position": "center",
         "screenshotAnnotationTool": "",
         "showCategories": true,
         "showIconBackground": false,
@@ -61,7 +61,8 @@
         "middleClickFollowMouse": false,
         "monitors": [
             "DP-1",
-            "HDMI-A-1"
+            "HDMI-A-1",
+            "DVI-D-1"
         ],
         "mouseWheelAction": "workspace",
         "mouseWheelWrap": true,
@@ -110,7 +111,7 @@
                             "onlyActiveWorkspaces": true,
                             "onlySameOutput": true,
                             "showPinnedApps": false,
-                            "showTitle": false,
+                            "showTitle": true,
                             "smartWidth": true,
                             "titleWidth": 120
                         }
@@ -226,6 +227,138 @@
                             "iconColor": "secondary",
                             "id": "Network",
                             "textColor": "secondary"
+                        }
+                    ]
+                }
+            },
+            {
+                "enabled": true,
+                "name": "DVI-D-1",
+                "widgets": {
+                    "center": [
+                        {
+                            "clockColor": "none",
+                            "customFont": "",
+                            "formatHorizontal": "HH:mm",
+                            "formatVertical": "HH mm - dd MM",
+                            "id": "Clock",
+                            "tooltipFormat": "HH:mm ddd, MMM dd",
+                            "useCustomFont": false
+                        }
+                    ],
+                    "left": [
+                        {
+                            "colorizeSystemIcon": "none",
+                            "colorizeSystemText": "none",
+                            "customIconPath": "",
+                            "enableColorization": false,
+                            "icon": "rocket",
+                            "iconColor": "none",
+                            "id": "Launcher",
+                            "useDistroLogo": false
+                        },
+                        {
+                            "compactMode": true,
+                            "diskPath": "/",
+                            "iconColor": "none",
+                            "id": "SystemMonitor",
+                            "showCpuCores": false,
+                            "showCpuFreq": false,
+                            "showCpuTemp": true,
+                            "showCpuUsage": true,
+                            "showDiskAvailable": false,
+                            "showDiskUsage": false,
+                            "showDiskUsageAsPercent": false,
+                            "showGpuTemp": false,
+                            "showLoadAverage": false,
+                            "showMemoryAsPercent": false,
+                            "showMemoryUsage": true,
+                            "showNetworkStats": false,
+                            "showSwapUsage": false,
+                            "textColor": "none",
+                            "useMonospaceFont": true,
+                            "usePadding": false
+                        },
+                        {
+                            "colorizeIcons": false,
+                            "hideMode": "hidden",
+                            "id": "ActiveWindow",
+                            "maxWidth": 145,
+                            "scrollingMode": "hover",
+                            "showIcon": true,
+                            "showText": true,
+                            "textColor": "none",
+                            "useFixedWidth": false
+                        },
+                        {
+                            "compactMode": false,
+                            "hideMode": "hidden",
+                            "hideWhenIdle": false,
+                            "id": "MediaMini",
+                            "maxWidth": 145,
+                            "panelShowAlbumArt": true,
+                            "scrollingMode": "hover",
+                            "showAlbumArt": true,
+                            "showArtistFirst": true,
+                            "showProgressRing": true,
+                            "showVisualizer": false,
+                            "textColor": "none",
+                            "useFixedWidth": false,
+                            "visualizerType": "linear"
+                        }
+                    ],
+                    "right": [
+                        {
+                            "blacklist": [
+                            ],
+                            "chevronColor": "none",
+                            "colorizeIcons": false,
+                            "drawerEnabled": true,
+                            "hidePassive": false,
+                            "id": "Tray",
+                            "pinned": [
+                            ]
+                        },
+                        {
+                            "hideWhenZero": false,
+                            "hideWhenZeroUnread": false,
+                            "iconColor": "none",
+                            "id": "NotificationHistory",
+                            "showUnreadBadge": true,
+                            "unreadBadgeColor": "primary"
+                        },
+                        {
+                            "deviceNativePath": "__default__",
+                            "displayMode": "graphic-clean",
+                            "hideIfIdle": false,
+                            "hideIfNotDetected": true,
+                            "id": "Battery",
+                            "showNoctaliaPerformance": false,
+                            "showPowerProfiles": false
+                        },
+                        {
+                            "displayMode": "onhover",
+                            "iconColor": "none",
+                            "id": "Volume",
+                            "middleClickCommand": "pwvucontrol || pavucontrol",
+                            "textColor": "none"
+                        },
+                        {
+                            "applyToAllMonitors": false,
+                            "displayMode": "onhover",
+                            "iconColor": "none",
+                            "id": "Brightness",
+                            "textColor": "none"
+                        },
+                        {
+                            "colorizeDistroLogo": false,
+                            "colorizeSystemIcon": "none",
+                            "colorizeSystemText": "none",
+                            "customIconPath": "",
+                            "enableColorization": false,
+                            "icon": "noctalia",
+                            "id": "ControlCenter",
+                            "useDistroLogo": false
                         }
                     ]
                 }
@@ -495,29 +628,60 @@
                         "format": "HH:mm\\nd MMMM yyyy",
                         "id": "Clock",
                         "roundedCorners": true,
+                        "scale": 2.4054667988037304,
+                        "showBackground": true,
+                        "useCustomFont": false,
+                        "x": 80,
+                        "y": 80
+                    },
+                    {
+                        "diskPath": "/",
+                        "id": "SystemStat",
+                        "layout": "bottom",
+                        "roundedCorners": true,
+                        "showBackground": true,
+                        "statType": "Memory",
+                        "x": 500,
+                        "y": 80
+                    }
+                ]
+            },
+            {
+                "name": "DVI-D-1",
+                "widgets": [
+                    {
+                        "clockColor": "none",
+                        "clockStyle": "digital",
+                        "customFont": "",
+                        "format": "HH:mm\\nd MMMM yyyy",
+                        "id": "Clock",
+                        "roundedCorners": true,
+                        "scale": 2.447340778502121,
                         "showBackground": false,
                         "useCustomFont": false,
-                        "x": 500,
-                        "y": 1240
+                        "x": 360,
+                        "y": 740
                     },
                     {
                         "hideMode": "visible",
                         "id": "MediaPlayer",
                         "roundedCorners": true,
+                        "scale": 1,
                         "showAlbumArt": true,
                         "showBackground": true,
                         "showButtons": true,
                         "showVisualizer": true,
                         "visualizerType": "linear",
-                        "x": 380,
-                        "y": 1480
+                        "x": 300,
+                        "y": 1360
                     },
                     {
                         "id": "Weather",
                         "roundedCorners": true,
+                        "scale": 1,
                         "showBackground": true,
-                        "x": 380,
-                        "y": 1600
+                        "x": 300,
+                        "y": 1500
                     }
                 ]
             }
