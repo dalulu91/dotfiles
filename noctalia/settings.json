@@ -328,7 +328,7 @@
                             "unreadBadgeColor": "primary"
                         },
                         {
-                            "deviceNativePath": "__default__",
+                            "deviceNativePath": "hidpp_battery_0",
                             "displayMode": "graphic-clean",
                             "hideIfIdle": false,
                             "hideIfNotDetected": true,
@@ -524,7 +524,7 @@
         ],
         "brightnessStep": 5,
         "enableDdcSupport": true,
-        "enforceMinimum": true
+        "enforceMinimum": false
     },
     "calendar": {
         "cards": [
