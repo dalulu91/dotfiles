@@ -153,6 +153,9 @@
                             "id": "Battery",
                             "showNoctaliaPerformance": false,
                             "showPowerProfiles": false
+                        },
+                        {
+                            "id": "plugin:screen-toolkit"
                         }
                     ]
                 }
@@ -172,6 +175,27 @@
                             "id": "Clock",
                             "tooltipFormat": "HH:mm ddd, MMM dd",
                             "useCustomFont": true
+                        },
+                        {
+                            "defaultSettings": {
+                                "colorHistory": [
+                                ],
+                                "detectedRecorder": "",
+                                "filenameFormat": "",
+                                "gifMaxSeconds": 30,
+                                "installedLangs": [
+                                    "eng"
+                                ],
+                                "paletteColors": [
+                                ],
+                                "recordCopyToClipboard": false,
+                                "recordSkipConfirmation": false,
+                                "screenshotPath": "",
+                                "selectedOcrLang": "eng",
+                                "transAvailable": false,
+                                "videoPath": ""
+                            },
+                            "id": "plugin:screen-toolkit"
                         }
                     ],
                     "left": [
@@ -359,6 +383,9 @@
                             "icon": "noctalia",
                             "id": "ControlCenter",
                             "useDistroLogo": false
+                        },
+                        {
+                            "id": "plugin:screen-toolkit"
                         }
                     ]
                 }
@@ -515,6 +542,9 @@
                     "icon": "noctalia",
                     "id": "ControlCenter",
                     "useDistroLogo": false
+                },
+                {
+                    "id": "plugin:screen-toolkit"
                 }
             ]
         }
