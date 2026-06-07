@@ -1,0 +1,12 @@
+{
+  "serverUrl": "https://ntfy.sh",
+  "topics": "",
+  "authMethod": "token",
+  "authToken": "",
+  "authUsername": "",
+  "authPassword": "",
+  "pollInterval": 30,
+  "enableToasts": true,
+  "maxMessages": 100,
+  "readMessageIds": []
+}

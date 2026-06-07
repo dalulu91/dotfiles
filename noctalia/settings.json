@@ -156,6 +156,21 @@
                         },
                         {
                             "id": "plugin:screen-toolkit"
+                        },
+                        {
+                            "id": "plugin:wallcards"
+                        },
+                        {
+                            "id": "plugin:plugin-manager"
+                        },
+                        {
+                            "id": "plugin:arch-updater"
+                        },
+                        {
+                            "id": "plugin:monique"
+                        },
+                        {
+                            "id": "plugin:ntfy-notifications"
                         }
                     ]
                 }
@@ -251,6 +266,21 @@
                             "iconColor": "secondary",
                             "id": "Network",
                             "textColor": "secondary"
+                        },
+                        {
+                            "id": "plugin:wallcards"
+                        },
+                        {
+                            "id": "plugin:plugin-manager"
+                        },
+                        {
+                            "id": "plugin:arch-updater"
+                        },
+                        {
+                            "id": "plugin:monique"
+                        },
+                        {
+                            "id": "plugin:ntfy-notifications"
                         }
                     ]
                 }
@@ -386,6 +416,21 @@
                         },
                         {
                             "id": "plugin:screen-toolkit"
+                        },
+                        {
+                            "id": "plugin:wallcards"
+                        },
+                        {
+                            "id": "plugin:plugin-manager"
+                        },
+                        {
+                            "id": "plugin:arch-updater"
+                        },
+                        {
+                            "id": "plugin:monique"
+                        },
+                        {
+                            "id": "plugin:ntfy-notifications"
                         }
                     ]
                 }
@@ -545,6 +590,21 @@
                 },
                 {
                     "id": "plugin:screen-toolkit"
+                },
+                {
+                    "id": "plugin:wallcards"
+                },
+                {
+                    "id": "plugin:plugin-manager"
+                },
+                {
+                    "id": "plugin:arch-updater"
+                },
+                {
+                    "id": "plugin:monique"
+                },
+                {
+                    "id": "plugin:ntfy-notifications"
                 }
             ]
         }
