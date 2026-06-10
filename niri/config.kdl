@@ -493,6 +493,7 @@ binds {
     Mod+bar repeat=false { toggle-overview; }
 
     Mod+Q repeat=false { close-window; }
+    Mod+Shift+Q repeat=false { spawn-sh "niri msg focused-window | grep -oP 'PID: \\K\\d+' | xargs -r kill -9"; }
 
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-window-down; }
