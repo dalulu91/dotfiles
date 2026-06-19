@@ -822,7 +822,7 @@ require('lazy').setup({
     config = function()
       -- nvim-treesitter was fully rewritten; old .configs module no longer exists.
       -- Install parsers (runs async, safe to call on every startup)
-      require('nvim-treesitter').install({ 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' })
+      require('nvim-treesitter').install { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' }
 
       -- Treesitter-based indentation (experimental). Disabled for ruby and html.
       vim.api.nvim_create_autocmd('FileType', {
@@ -893,7 +893,6 @@ require('lazy').setup({
   },
 })
 
-
 vim.api.nvim_set_keymap('n', '<F5>', ':w<CR>:!python %<CR>', { noremap = true, silent = false })
 
 -- Suppress "position_encoding param is required" warning from Neovim 0.10+
@@ -930,6 +929,3 @@ vim.api.nvim_set_keymap('n', '<C-j>', 'o<Esc>k', { noremap = true, silent = true
 
 -- Slett linjen over cursor med Shift + k
 vim.api.nvim_set_keymap('n', '<S-k>', 'kdd', { noremap = true, silent = true })
-
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et

@@ -10,7 +10,31 @@ include "monitor.kdl"
 // Find the full list of options on the wiki:
 // https://niri-wm.github.io/niri/Configuration:-Input
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+
+// BACKGROUND IMAGE
+// spawn-at-startup "swaybg" "-i" "/home/daniel/Pictures/Wallpapers/clay-banks-u27Rrbs9Dwc-unsplash.jpg" "-m" "fill"
+
+spawn-at-startup "swaybg" "-i" "/home/daniel/Pictures/Wallpapers/tylijura-ai-generated-9490113_1920.png" "-m" "fill"
+// -----
+
+
 prefer-no-csd
+
+layer-rule {
+    // Match the wallpaper namespace (swww, swaybg, etc.)
+    match namespace="^wallpaper$"
+
+    // Locks the background completely stationary
+    place-within-backdrop true
+}
+
+window-rule {
+    // Steam friend/chat notification toasts open centered by default; move them to a corner.
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+    open-focused false
+}
+
 input {
     keyboard {
         xkb {
@@ -71,7 +95,8 @@ input {
 
     // Focus windows and outputs automatically when moving the mouse into them.
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-    focus-follows-mouse
+    focus-follows-mouse max-scroll-amount="0%"
+
 }
 
 // You can configure outputs by their name, which you can find
@@ -116,7 +141,7 @@ input {
 // https://niri-wm.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 10
+    gaps 1
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -164,7 +189,7 @@ layout {
         // off
 
         // How many logical pixels the ring extends out from the windows.
-        width 2
+        width 1
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -173,7 +198,7 @@ layout {
 
         // Color of the ring on the active monitor.
         // active-color "#7fc8ff"
-        active-color "#ABDEFF"
+        active-color "#D08D4F"
 
         // Color of the ring on inactive monitors.
         //
@@ -222,8 +247,8 @@ layout {
     // You can enable drop shadows for windows.
     shadow {
         // Uncomment the next line to enable shadows.
-        // on
-
+        on
+ 
         // By default, the shadow draws only around its window, and not behind it.
         // Uncomment this setting to make the shadow draw behind its window.
         //
@@ -267,6 +292,9 @@ layout {
         // top 64
         // bottom 64
     }
+
+    // Allows the stationary wallpaper to peek through behind windows
+    background-color "transparent"
 }
 
 // Add lines like this to spawn processes at startup.
@@ -275,14 +303,14 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-// spawn-at-startup "waybar"
+spawn-at-startup "waybar"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
-spawn-sh-at-startup "qs -c noctalia-shell"
+// spawn-sh-at-startup "qs -c noctalia-shell"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
-    // skip-at-startup
+    skip-at-startup
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -321,7 +349,7 @@ animations {
 
 
 window-rule {
-    geometry-corner-radius 7
+    geometry-corner-radius 0
     clip-to-geometry true
 }
 
@@ -442,10 +470,10 @@ binds {
     // Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
 
-    // Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
 
     // Core Contalia binds
-    Mod+D { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+    // Mod+D { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
     // Mod+S { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
     // Mod+Comma { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
 
@@ -744,4 +772,5 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
+
 }

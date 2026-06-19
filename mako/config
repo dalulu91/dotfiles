@@ -1,0 +1,14 @@
+default-timeout=5000
+ignore-timeout=1
+
+font=JetBrainsMono Nerd Font 9
+width=280
+height=100
+margin=6
+padding=6,8
+border-size=1
+border-radius=6
+border-color=#D08D4F
+background-color=#121212E6
+text-color=#E8E8E8
+max-icon-size=24
