@@ -17,6 +17,8 @@ spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "swaybg" "-i" "/home/daniel/Pictures/Wallpapers/tylijura-ai-generated-9490113_1920.png" "-m" "fill"
 // -----
 
+// hamr startes nå via systemd user services (hamr-daemon.service, hamr-gtk.service)
+
 
 prefer-no-csd
 
@@ -470,7 +472,8 @@ binds {
     // Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
 
-    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    // Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+D { spawn "/home/daniel/.local/bin/hamr" "toggle"; }
 
     // Core Contalia binds
     // Mod+D { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
@@ -774,3 +777,4 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 
 }
+include "hamr/blur.kdl"
