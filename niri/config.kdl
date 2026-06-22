@@ -50,6 +50,14 @@ input {
             // If this section is empty, niri will fetch xkb settings
             // from org.freedesktop.locale1. You can control these using
             // localectl set-x11-keymap.
+
+            // niri/smithay can't see ~/.config/xkb (its xkb context doesn't
+            // add user include paths), so we ship a fully compiled keymap
+            // instead. Regenerate with:
+            //   xkbcli compile-keymap --rules evdev --model pc105 \
+            //     --layout daniel --variant no_custom > ~/.config/keymap.xkb
+            // (source variant lives in ~/.config/xkb/symbols/daniel)
+            file "~/.config/keymap.xkb"
         }
 
         // Enable numlock on startup, omitting this setting disables it.
