@@ -417,10 +417,12 @@ window-rule {
     open-floating true
 }
 
-// Wine Desktop (yabridge virtual desktop) - float it so it doesn't take up tiled layout space
+// Wine Desktop (yabridge virtual desktop) - needed for plugin GUI input, but it has no
+// minimize/hide and floats above everything. Park it on its own workspace instead.
 window-rule {
     match app-id="explorer.exe" title="Wine Desktop"
     open-floating true
+    open-on-workspace "wine-desktop"
 }
 
 // REAPER plugin containers are empty when Wine virtual desktop is active - send to background workspace
