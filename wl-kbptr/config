@@ -4,6 +4,10 @@ selectable_border_color=#0405
 unselectable_bg_color=#2224
 label_font_size=7 40% 90
 
+[mode_floating]
+selectable_bg_color=#171e
+unselectable_bg_color=#2220
+
 [mode_bisect]
 even_area_bg_color=#0302
 even_area_border_color=#0404

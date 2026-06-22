@@ -499,8 +499,17 @@ binds {
 
     // wl-kbptr: keyboard-driven mouse pointer (hint-click), like Vimium/Tridactyl
     // but works anywhere on screen, not just in the browser.
-    // tile -> pick a labeled grid tile, bisect -> refine within it, click -> left-click there.
-    Mod+G hotkey-overlay-title="Keyboard hint-click (wl-kbptr)" { spawn "wl-kbptr" "-o" "modes=tile,bisect,click"; }
+    // floating -> auto-detected UI elements (OpenCV), click -> left-click there.
+    Mod+G hotkey-overlay-title="Keyboard hint-click (wl-kbptr)" { spawn "wl-kbptr" "-o" "modes=floating,click" "-o" "mode_floating.source=detect"; }
+
+    // Same hint overlay, but only moves the pointer (no click). Use this when you
+    // want to double-click or right-click via the binds below instead.
+    Mod+Ctrl+G hotkey-overlay-title="Move Pointer Only (wl-kbptr)" { spawn "wl-kbptr" "-o" "modes=floating" "-o" "mode_floating.source=detect"; }
+
+    // Repeat a click at the current pointer position (e.g. press twice fast for
+    // a double-click), without reopening the wl-kbptr hint overlay.
+    Mod+Shift+G hotkey-overlay-title="Repeat Click (wl-kbptr)" { spawn "wlrctl" "pointer" "click" "left"; }
+    Mod+Alt+G hotkey-overlay-title="Right Click (wl-kbptr)" { spawn "wlrctl" "pointer" "click" "right"; }
 
     Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
 
