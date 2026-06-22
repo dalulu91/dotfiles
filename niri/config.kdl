@@ -797,3 +797,5 @@ binds {
 
 }
 include "hamr/blur.kdl"
+
+include "dms/cursor.kdl"
