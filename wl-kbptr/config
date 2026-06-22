@@ -1,0 +1,12 @@
+[mode_tile]
+selectable_bg_color=#0302
+selectable_border_color=#0405
+unselectable_bg_color=#2224
+label_font_size=7 40% 90
+
+[mode_bisect]
+even_area_bg_color=#0302
+even_area_border_color=#0404
+odd_area_bg_color=#0032
+odd_area_border_color=#0044
+label_font_size=17
