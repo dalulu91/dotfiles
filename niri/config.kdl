@@ -10,6 +10,7 @@ include "monitor.kdl"
 // Find the full list of options on the wiki:
 // https://niri-wm.github.io/niri/Configuration:-Input
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+spawn-at-startup "qpwgraph" "-a"
 
 // BACKGROUND IMAGE
 // spawn-at-startup "swaybg" "-i" "/home/daniel/Pictures/Wallpapers/clay-banks-u27Rrbs9Dwc-unsplash.jpg" "-m" "fill"
@@ -391,7 +392,25 @@ window-rule {
         blur true
         xray true
     }
+
 }
+
+window-rule {
+    match app-id="org.gnome.Calculator"
+    open-floating true
+}
+
+window-rule {
+    match title="^Friends List$"  // Use ^ and $ for exact matching
+    match app-id="steam"
+    
+    // Properties to apply
+    open-floating true
+    default-window-height { fixed 846; }
+    default-column-width { fixed 342; }
+}
+
+
 blur {
     // Increase passes or offset to make the blur stronger/softer
     passes 2    // Default is 3. More passes = smoother, heavier blur.
@@ -494,22 +513,29 @@ binds {
     // Mod+S { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
     // Mod+Comma { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
 
-    Mod+E { spawn "helium"; }
+    Mod+E { spawn "/home/daniel/.local/bin/helium"; }
     Mod+A { spawn "thunar"; }
 
     // wl-kbptr: keyboard-driven mouse pointer (hint-click), like Vimium/Tridactyl
     // but works anywhere on screen, not just in the browser.
     // floating -> auto-detected UI elements (OpenCV), click -> left-click there.
-    Mod+G hotkey-overlay-title="Keyboard hint-click (wl-kbptr)" { spawn "wl-kbptr" "-o" "modes=floating,click" "-o" "mode_floating.source=detect"; }
+    Mod+P hotkey-overlay-title="Keyboard hint-click (wl-kbptr)" { spawn "wl-kbptr" "-o" "modes=floating,click" "-o" "mode_floating.source=detect"; }
 
     // Same hint overlay, but only moves the pointer (no click). Use this when you
     // want to double-click or right-click via the binds below instead.
-    Mod+Ctrl+G hotkey-overlay-title="Move Pointer Only (wl-kbptr)" { spawn "wl-kbptr" "-o" "modes=floating" "-o" "mode_floating.source=detect"; }
+    Mod+Ctrl+P hotkey-overlay-title="Move Pointer Only (wl-kbptr)" { spawn "wl-kbptr" "-o" "modes=floating" "-o" "mode_floating.source=detect"; }
 
     // Repeat a click at the current pointer position (e.g. press twice fast for
     // a double-click), without reopening the wl-kbptr hint overlay.
-    Mod+Shift+G hotkey-overlay-title="Repeat Click (wl-kbptr)" { spawn "wlrctl" "pointer" "click" "left"; }
-    Mod+Alt+G hotkey-overlay-title="Right Click (wl-kbptr)" { spawn "wlrctl" "pointer" "click" "right"; }
+    // Uses ydotool (uinput-level synthetic input) instead of wlrctl, since
+    // wlrctl's wlr-virtual-pointer clicks don't carry a real input serial and
+    // can't reliably trigger context-menu popups.
+    // Bound under AltGr (ISO_Level3_Shift), not Mod/Ctrl/Alt: keeps it off
+    // niri's built-in Mod+MouseLeft/MouseRight drag gestures entirely, and
+    // niri matches the base key name "P", not the AltGr-shifted keysym (π),
+    // so no XKB layout changes are needed.
+    ISO_Level3_Shift+P hotkey-overlay-title="Repeat Click (wl-kbptr)" { spawn "ydotool" "click" "0xC0"; }
+    ISO_Level3_Shift+Shift+P hotkey-overlay-title="Right Click (wl-kbptr)" { spawn "ydotool" "click" "0xC1"; }
 
     Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
 
@@ -552,7 +578,6 @@ binds {
     Mod+bar repeat=false { toggle-overview; }
 
     Mod+Q repeat=false { close-window; }
-    Mod+Shift+Q repeat=false { spawn-sh "niri msg focused-window | grep -oP 'PID: \\K\\d+' | xargs -r kill -9"; }
 
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-window-down; }
