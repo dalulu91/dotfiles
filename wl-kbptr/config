@@ -5,8 +5,9 @@ unselectable_bg_color=#2224
 label_font_size=7 40% 90
 
 [mode_floating]
-selectable_bg_color=#171e
+selectable_bg_color=#171a
 unselectable_bg_color=#2220
+label_font_size=13 0% 13
 
 [mode_bisect]
 even_area_bg_color=#0302
